@@ -1,0 +1,43 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+    margin-top: 2rem;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1rem;
+}
+
+.header * {
+    margin: 0;
+}
+
+.section {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.section p {
+    max-width: 600px;
+}
+
+.my-name {
+    text-align: center;
+}
+
+.my-image {
+    margin: 0 0 2rem;
+}
+
+.list-container {
+    text-align: left;
+}
+
+.footer {
+    margin: 4rem;
+}
