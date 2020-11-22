@@ -3,19 +3,22 @@
     margin: auto;
 }
 
-.header {
-    text-align: center;
-    margin-top: 2rem;
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: 1px solid lightgray;
-    padding-bottom: 1rem;
+    padding: 1rem 0 0.5rem;
 }
 
-.header h1 {
+.brand img {
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+.brand h1 {
     font-size: 150%;
     font-weight: normal;
-}
-
-.header * {
     margin: 0;
 }
 
