@@ -12,6 +12,7 @@
 }
 
 .brand img {
+    display: block;
     height: 4rem;
     margin-right: 1rem;
 }
