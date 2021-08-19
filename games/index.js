@@ -2,13 +2,13 @@
   const games = [
     {
       title: "Birdman Challenge",
-      link: "https://www.tsujio.org/game-birdman",
+      link: "https://www.tsujio.org/games/game.html?title=birdman",
       image: "https://github.com/tsujio/game-birdman/blob/main/image.gif?raw=true",
       description: "鳥人間コンテストを題材にしたゲームです。",
     },
     {
       title: "Maxwell's Demon",
-      link: "https://www.tsujio.org/game-maxwells-demon",
+      link: "https://www.tsujio.org/games/game.html?title=maxwells-demon",
       image: "https://github.com/tsujio/game-maxwells-demon/blob/main/image.gif?raw=true",
       description: "マクスウェルの悪魔を題材にしたゲームです。",
     },

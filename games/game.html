@@ -1,47 +1,64 @@
 <!DOCTYPE html>
-<script src="https://storage.googleapis.com/tsujio-game-serve/wasm_exec.js"></script>
-<script>
-// Polyfill
-if (!WebAssembly.instantiateStreaming) {
-  WebAssembly.instantiateStreaming = async (resp, importObject) => {
-    const source = await (await resp).arrayBuffer();
-    return await WebAssembly.instantiate(source, importObject);
-  };
-}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./game.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 id="game-title"></h1>
+      </div>
+      <div class="game-container">
+        <iframe id="game-screen"></iframe>
+      </div>
+      <div class="description-container">
+        <div id="game-description" class="description">
+        </div>
+      </div>
+      <div class="link-container">
+        <ul>
+          <li><a id="game-source" href="#">ソースコード</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <p>&copy; <a href="https://www.tsujio.org">辻尾研</a></p>
+      </div>
+    </div>
+  </body>
 
-const param = (() => {
-  let query = Object.fromEntries(location.search.substr(1,).split('&').map((kv) => kv.split('=')))
+  <script>
+    window.onload = () => {
+      const query = Object.fromEntries(location.search.substr(1,).split('&').map((kv) => kv.split('=')))
 
-  let param = {}
+      if (typeof query.title !== "string" || !query.title.match(/^[\w-]+$/)) {
+        throw new Error("title not found")
+      }
 
-  if (!String(query.title).match(/^[\w-]+$/)) {
-    throw new Error("title not found")
-  }
-  param.title = query.title
+      fetch(`https://www.tsujio.org/game-${query.title}/info.json`)
+        .then((res) => res.json())
+        .then((info) => {
+          document.title = info.title
+          document.querySelector("#game-title").textContent = `${info.title} (${info.year})`
+          document.querySelector("#game-screen").src = `./play.html?title=${query.title}&compress=gz&logging=true`
+          const description = document.querySelector("#game-description")
+          for (const d of info.description) {
+            const p = document.createElement("p")
+            p.innerHTML = d
+            description.appendChild(p)
+          }
+          document.querySelector("#game-source").href = `https://github.com/tsujio/game-${query.title}`
 
-  if (String(query.version).match(/^\d+$/)) {
-    param.version = ".v" + query.version
-  } else {
-    param.version = ""
-  }
+          const resize = () => {
+            const iframe = document.querySelector("#game-screen")
+            iframe.style.height = (iframe.clientWidth * info.screen.height / info.screen.width) + "px"
+          }
 
-  if (String(query.compress).match(/^(gz)$/)) {
-    param.compress = "." + query.compress
-  } else {
-    param.compress = ""
-  }
-
-  param.logging = String(query.logging) === "true"
-
-  return param
-})()
-
-const go = new Go();
-const url = `https://storage.googleapis.com/tsujio-game-serve/${param.title}/${param.title}${param.version}.wasm${param.compress}`
-WebAssembly.instantiateStreaming(fetch(url), go.importObject).then(result => {
-  if (param.logging) {
-    go.env["GAME_LOGGING"] = "1"
-  }
-  go.run(result.instance);
-});
-</script>
+          window.onresize = resize
+          resize()
+        })
+    }
+  </script>
+</html>
