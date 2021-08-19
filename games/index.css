@@ -1,0 +1,127 @@
+body {
+    background: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.games-container {
+}
+
+.game-container {
+    box-shadow: 2px 2px 2px silver, -1px -1px 1px lightgrey;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: white;
+}
+
+.game-title {
+    margin: 0;
+}
+
+.game-image {
+    width: 100%;
+}
+
+.game-description {
+    margin: 0;
+}
+
+.footer {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 959px) {
+    .container {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .header {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+
+    .games-container {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .game-container {
+        padding: 0 28px 24px;
+        width: 90%;
+        text-align: initial;
+    }
+
+    .game-container:nth-of-type(n+2) {
+        margin-top: 24px;
+    }
+
+    .game-title {
+        font-size: 24px;
+        margin-top: 24px;
+    }
+
+    .game-image {
+        margin-top: 18px;
+    }
+
+    .game-description {
+        margin-top: 18px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .container {
+        width: 960px;
+        margin: auto;
+    }
+
+    .header {
+        margin-top: 80px;
+    }
+
+    .games-container {
+        margin-top: 80px;
+    }
+
+    .game-container {
+        padding: 0 14px;
+        width: 30%;
+        height: 360px;
+    }
+
+    .game-container:not(:nth-of-type(3n)) {
+        margin-right: 32px;
+    }
+
+    .game-container:nth-of-type(n+4) {
+        margin-top: 32px;
+    }
+
+    .game-title {
+        margin-top: 14px;
+        font-size: 16px;
+    }
+
+    .game-image {
+        margin-top: 14px;
+    }
+
+    .game-description {
+        margin-top: 14px;
+    }
+}
