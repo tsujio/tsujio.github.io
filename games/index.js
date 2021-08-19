@@ -3,13 +3,13 @@
     {
       title: "Birdman Challenge",
       link: "https://www.tsujio.org/game-birdman",
-      image: "https://github.com/tsujio/game-birdman/blob/main/image.png?raw=true",
+      image: "https://github.com/tsujio/game-birdman/blob/main/image.gif?raw=true",
       description: "鳥人間コンテストを題材にしたゲームです。",
     },
     {
       title: "Maxwell's Demon",
       link: "https://www.tsujio.org/game-maxwells-demon",
-      image: "https://github.com/tsujio/game-maxwells-demon/blob/main/image.png?raw=true",
+      image: "https://github.com/tsujio/game-maxwells-demon/blob/main/image.gif?raw=true",
       description: "マクスウェルの悪魔を題材にしたゲームです。",
     },
   ]
