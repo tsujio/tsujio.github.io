@@ -12,6 +12,12 @@
       image: "https://github.com/tsujio/game-maxwells-demon/blob/main/image.gif?raw=true",
       description: "マクスウェルの悪魔を題材にしたゲームです。",
     },
+    {
+      title: "Spotted Garden Eel",
+      link: "https://www.tsujio.org/games/game.html?title=spotted-garden-eel",
+      image: "https://github.com/tsujio/spotted-garden-eel/blob/main/image.gif?raw=true",
+      description: "チンアナゴを題材にしたゲームです。",
+    },
   ]
 
   window.onload = () => {
