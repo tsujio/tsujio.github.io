@@ -15,7 +15,7 @@
     {
       title: "Spotted Garden Eel",
       link: "https://www.tsujio.org/games/game.html?title=spotted-garden-eel",
-      image: "https://github.com/tsujio/spotted-garden-eel/blob/main/image.gif?raw=true",
+      image: "https://github.com/tsujio/game-spotted-garden-eel/blob/main/image.gif?raw=true",
       description: "チンアナゴを題材にしたゲームです。",
     },
   ]
