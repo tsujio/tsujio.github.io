@@ -19,7 +19,7 @@ a {
 }
 
 .game-container {
-    box-shadow: 2px 2px 2px silver, -1px -1px 1px lightgrey;
+    box-shadow: 2px 2px 2px silver, -1px -1px 1px lightgrey, 2px -1px 1px lightgray;
     display: inline-block;
     box-sizing: border-box;
     border-radius: 4px;
@@ -32,6 +32,7 @@ a {
 
 .game-image {
     width: 100%;
+    aspect-ratio: 4 / 3;
 }
 
 .game-description {

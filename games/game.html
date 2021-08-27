@@ -8,7 +8,18 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <div class="navbar">
+        <div class="navbar-item navbar-item-left">
+          <a id="link-prev" href="#"><span class="arrow arrow-left"></span></a>
+        </div>
+        <div class="navbar-item navbar-item-center">
+          <a href="https://www.tsujio.org/games">All Games</a>
+        </div>
+        <div class="navbar-item navbar-item-right">
+          <a id="link-next" href="#"><span class="arrow arrow-right"></span></a>
+        </div>
+      </div>
+      <div class="game-header">
         <h1 id="game-title"></h1>
       </div>
       <div class="game-container">
@@ -60,6 +71,32 @@
 
           window.onresize = resize
           resize()
+        })
+
+      fetch("https://www.tsujio.org/games/games.json")
+        .then((res) => res.json())
+        .then((data) => {
+          for (let i = 0; i < data.games.length; i++) {
+            const m = data.games[i].link.match(/title=([\w-]+)/)
+            if (m && m[1] === query.title) {
+              const prev = document.querySelector("#link-prev")
+              const next = document.querySelector("#link-next")
+
+              if (i === 0) {
+                prev.style.display = "none"
+              } else {
+                prev.href = data.games[i - 1].link + `&logging=${logging}`
+              }
+
+              if (i === data.games.length - 1) {
+                next.style.display = "none"
+              } else {
+                next.href = data.games[i + 1].link + `&logging=${logging}`
+              }
+
+              break
+            }
+          }
         })
     }
   </script>
