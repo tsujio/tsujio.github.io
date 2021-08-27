@@ -18,6 +18,12 @@
       image: "https://github.com/tsujio/game-spotted-garden-eel/blob/main/image.gif?raw=true",
       description: "チンアナゴを題材にしたゲームです。",
     },
+    {
+      title: "Cosmic Velocity",
+      link: "https://www.tsujio.org/games/game.html?title=cosmic-velocity",
+      image: "https://github.com/tsujio/game-cosmic-velocity/blob/main/image.gif?raw=true",
+      description: "宇宙速度を題材にしたゲームです。",
+    },
   ]
 
   window.onload = () => {

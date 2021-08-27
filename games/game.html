@@ -37,12 +37,14 @@
         throw new Error("title not found")
       }
 
+      const logging = query.logging === "false" ? "false" : "true"
+
       fetch(`https://www.tsujio.org/game-${query.title}/info.json`)
         .then((res) => res.json())
         .then((info) => {
           document.title = info.title
           document.querySelector("#game-title").textContent = `${info.title} (${info.year})`
-          document.querySelector("#game-screen").src = `./play.html?title=${query.title}&compress=gz&logging=true`
+          document.querySelector("#game-screen").src = `./play.html?title=${query.title}&compress=gz&logging=${logging}`
           const description = document.querySelector("#game-description")
           for (const d of info.description) {
             const p = document.createElement("p")
