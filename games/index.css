@@ -19,8 +19,7 @@ a {
 }
 
 .game-container {
-    box-shadow: 2px 2px 2px silver, -1px -1px 1px lightgrey, 2px -1px 1px lightgray;
-    display: inline-block;
+    box-shadow: 1px 4px 8px silver;
     box-sizing: border-box;
     border-radius: 4px;
     background: white;
@@ -41,7 +40,7 @@ a {
 
 .footer {
     margin-top: 6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -53,35 +52,36 @@ a {
 
     .header {
         margin-top: 30px;
-        font-size: 12px;
+    }
+
+    .header h1 {
+        font-size: 24px;
     }
 
     .games-container {
         margin-top: 30px;
-        text-align: center;
     }
 
     .game-container {
-        padding: 0 28px 24px;
+        padding: 28px 24px;
         width: 90%;
-        text-align: initial;
+        margin: auto;
     }
 
     .game-container:nth-of-type(n+2) {
-        margin-top: 24px;
+        margin-top: 28px;
     }
 
     .game-title {
-        font-size: 24px;
-        margin-top: 24px;
+        font-size: 20px;
     }
 
     .game-image {
-        margin-top: 18px;
+        margin-top: 24px;
     }
 
     .game-description {
-        margin-top: 18px;
+        margin-top: 24px;
     }
 }
 
@@ -97,11 +97,13 @@ a {
 
     .games-container {
         margin-top: 80px;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .game-container {
-        padding: 0 14px;
-        width: 30%;
+        padding: 0 16px;
+        width: calc((100% - 64px) / 3);
         height: 360px;
     }
 
@@ -114,15 +116,15 @@ a {
     }
 
     .game-title {
-        margin-top: 14px;
+        margin-top: 24px;
         font-size: 16px;
     }
 
     .game-image {
-        margin-top: 14px;
+        margin-top: 16px;
     }
 
     .game-description {
-        margin-top: 14px;
+        margin-top: 16px;
     }
 }
