@@ -63,6 +63,12 @@ body {
     text-align: left;
 }
 
+.atmark {
+    width: 1rem;
+    margin: 0.1rem;
+    vertical-align: middle;
+}
+
 .footer {
     border-top: 1px solid lightgray;
     margin-top: 4rem;
